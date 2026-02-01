@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Iron Clad x Emerald Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Space+Grotesk:wght@300..700&family=Inter:wght@100..900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "emerald-tech": "#10b981",
+            "neon-green": "#34d399",
+            "forest-deep": "#06130c",
+            "forest-mid": "#0a2116",
+            "glass-border": "rgba(52, 211, 153, 0.2)",
+            "primary": "#10b981",
+            "emerald-dark": "#062217",
+            "emerald-deeper": "#020f0a",
+            "emerald-glow": "#059669",
+            "slate-custom": "#94a3b8",
+            "neon": "#34d399",
+            "background-dark": "#050806",
+            "surface-dark": "#0c130e",
+            "primary-dark": "#059669",
+            "accent": "#10b981",
+            "background-forest": "#064e3b",
+            "border-dark": "#1a2f26",
+          },
+          fontFamily: {
+            display: ["Lexend Deca", "Space Grotesk", "Montserrat", "sans-serif"],
+            wide: ["Space Grotesk", "sans-serif"],
+            tech: ["Space Grotesk", "sans-serif"],
+            body: ["Inter", "Montserrat", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            "2xl": "2rem",
+            full: "9999px",
+          },
+          letterSpacing: {
+            widest: ".15em",
+            tightest: "-.04em",
+          },
+          backgroundImage: {
+            "gradient-emerald": "linear-gradient(135deg, #020403 0%, #064e3b 50%, #020403 100%)",
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-background-dark text-white antialiased selection:bg-primary selection:text-black;
+      }
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020403; }
+    ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #34d399; }
+    .glass-card {
+      @apply backdrop-blur-xl border border-white/10 bg-white/5;
+    }
+    .glass-input {
+      @apply bg-black/30 border border-white/10 backdrop-blur px-3 py-3 text-sm text-white placeholder-slate-600 focus:border-primary focus:ring-0;
+    }
+    .emerald-glow { box-shadow: 0 0 25px rgba(16, 185, 129, 0.15); }
+    .neon-border { border: 1px solid rgba(52, 211, 153, 0.4); box-shadow: inset 0 0 10px rgba(52, 211, 153, 0.1), 0 0 15px rgba(52, 211, 153, 0.1); }
+    .text-outline { -webkit-text-stroke: 1px rgba(255,255,255,0.1); color: transparent; }
+    .tech-glow { box-shadow: 0 0 30px rgba(16, 185, 129, 0.15); }
+    .text-glow { text-shadow: 0 0 20px rgba(52, 211, 153, 0.4); }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .glow-text { text-shadow: 0 0 10px rgba(52, 211, 153, 0.3); }
+    
+    /* Advanced Keyframe Animations */
+    @keyframes growWidth { from { width: 0; } to { width: 100%; } }
+    @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes rotateIn { from { opacity: 0; transform: rotate(-10deg); } to { opacity: 1; transform: rotate(0); } }
+    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.5); } 50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.8); } }
+    @keyframes fadeScaleUp { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes scaleIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+    @keyframes bounceIn { 0% { opacity: 0; transform: scale(0.3); } 50% { transform: scale(1.05); } 70% { transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes floatUp { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    @keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
+    @keyframes glow { 0%, 100% { text-shadow: 0 0 10px rgba(52, 211, 153, 0.3), 0 0 20px rgba(52, 211, 153, 0.2); } 50% { text-shadow: 0 0 20px rgba(52, 211, 153, 0.6), 0 0 30px rgba(52, 211, 153, 0.4); } }
+    @keyframes borderGlow { 0%, 100% { border-color: rgba(52, 211, 153, 0.2); box-shadow: 0 0 10px rgba(52, 211, 153, 0.1); } 50% { border-color: rgba(52, 211, 153, 0.6); box-shadow: 0 0 20px rgba(52, 211, 153, 0.3); } }
+    @keyframes rotate360 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes flipInX { from { opacity: 0; transform: perspective(400px) rotateX(90deg); } to { opacity: 1; transform: perspective(400px) rotateX(0); } }
+    @keyframes zoomInRotate { from { opacity: 0; transform: scale(0.5) rotate(-5deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+    @keyframes bubblePulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); } 50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } }
+    @keyframes slideInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    
+    .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+    .animate-float { animation: floatUp 3s ease-in-out infinite; }
+    .animate-glow { animation: glow 2s ease-in-out infinite; }
+    .animate-border-glow { animation: borderGlow 2s ease-in-out infinite; }
+    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+  </style>
+</head>
+<body class="font-body bg-gradient-emerald overflow-x-hidden">
+  <div class="relative flex flex-col min-h-screen w-full">
+    <!-- Top vignette overlay -->
+    <div class="fixed top-0 left-0 right-0 h-[40vh] bg-gradient-to-b from-black/40 via-black/20 to-transparent z-40 pointer-events-none"></div>
+    
+    <header class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 animate-[slideInDown_0.8s_ease-out]">
+      <div class="w-[90%] md:w-[70%] max-w-[1000px] flex h-16 items-center justify-between px-8 lg:px-10 rounded-full border border-primary/20 bg-background-dark/80 backdrop-blur-xl shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+        <div class="flex items-center gap-3">
+          <div class="size-8 text-primary flex items-center justify-center border border-primary/20 rounded-sm">
+            <svg class="size-5" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h2 class="text-white text-lg sm:text-xl font-display font-bold tracking-[0.2em] uppercase">Iron Clad</h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 animate-[fadeIn_1s_ease-out_0.5s_forwards] opacity-0">
+          <a class="text-gray-400 hover:text-primary transition-colors text-xs font-bold uppercase tracking-[0.2em]" href="#about">About</a>
+          <a class="text-gray-400 hover:text-primary transition-colors text-xs font-bold uppercase tracking-[0.2em]" href="#trainers">Services</a>
+          <a class="text-gray-400 hover:text-primary transition-colors text-xs font-bold uppercase tracking-[0.2em]" href="#trainers">Trainers</a>
+          <a class="text-gray-400 hover:text-primary transition-colors text-xs font-bold uppercase tracking-[0.2em]" href="#pricing">Pricing</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <button class="hidden sm:block text-[11px] font-bold tracking-[0.24em] text-white hover:text-primary transition-colors uppercase">Login</button>
+          <button class="hidden sm:flex h-10 items-center justify-center rounded-full border border-primary/50 px-6 text-[10px] font-black uppercase tracking-[0.2em] text-primary hover:bg-primary hover:text-background-dark transition-all duration-300">
+            Join Now
+          </button>
+          <button id="mobile-menu-toggle" class="md:hidden text-white transition-transform duration-300 hover:scale-110 flex items-center justify-center"><span class="material-symbols-outlined">menu</span></button>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500">
+      <nav class="flex flex-col items-center gap-8">
+        <a class="text-gray-400 hover:text-primary transition-all duration-300 text-2xl font-bold uppercase tracking-[0.2em] transform translate-y-4 opacity-0" href="#about" style="transition-delay: 100ms;">About</a>
+        <a class="text-gray-400 hover:text-primary transition-all duration-300 text-2xl font-bold uppercase tracking-[0.2em] transform translate-y-4 opacity-0" href="#trainers" style="transition-delay: 150ms;">Services</a>
+        <a class="text-gray-400 hover:text-primary transition-all duration-300 text-2xl font-bold uppercase tracking-[0.2em] transform translate-y-4 opacity-0" href="#trainers" style="transition-delay: 200ms;">Trainers</a>
+        <a class="text-gray-400 hover:text-primary transition-all duration-300 text-2xl font-bold uppercase tracking-[0.2em] transform translate-y-4 opacity-0" href="#pricing" style="transition-delay: 250ms;">Pricing</a>
+        <button class="text-2xl font-bold tracking-[0.24em] text-white hover:text-primary transition-all duration-300 uppercase transform translate-y-4 opacity-0" style="transition-delay: 300ms;">Login</button>
+        <button class="h-14 flex items-center justify-center rounded-full border-2 border-primary/50 px-10 text-sm font-black uppercase tracking-[0.2em] text-primary hover:bg-primary hover:text-background-dark transition-all duration-300 transform translate-y-4 opacity-0" style="transition-delay: 350ms;">
+          Join Now
+        </button>
+      </nav>
+    </div>
+    <!-- Hero & Intro (from code4) -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-visible pt-28 pb-20">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#020403] via-[#064e3b]/50 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#020403] via-transparent to-[#020403] z-10"></div>
+        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Premium gym facility with dark lighting" class="w-full h-full object-cover opacity-50" />
+      </div>
+      <div class="relative z-30 max-w-[1400px] w-full mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center overflow-visible">
+        <div class="lg:col-span-7 flex flex-col gap-8 overflow-visible pr-8">
+          <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/20 bg-surface-dark/50 backdrop-blur-md w-fit" data-aos="fade-right">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_#34d399]"></span>
+            <span class="text-[10px] font-bold text-primary tracking-[0.2em] uppercase">Next Gen Fitness</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl xl:text-8xl font-medium text-white tracking-tight leading-[1.15] font-body pr-8 pb-2 overflow-visible" data-aos="fade-up" data-aos-delay="200">
+            ELEVATE <br />
+            <span class="font-light text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary opacity-90">PERFORMANCE</span>
+          </h1>
+          <p class="max-w-xl text-lg text-gray-300 font-light leading-relaxed tracking-wide" data-aos="fade-up" data-aos-delay="400">
+            Where precision meets power. Experience our state-of-the-art facility equipped with biometric tracking and adaptive resistance technology.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-6 w-full pt-6" data-aos="fade-up" data-aos-delay="600">
+            <button class="bg-white hover:bg-gray-100 text-background-dark text-sm font-bold tracking-widest px-10 py-4 rounded-full transition-all duration-700 uppercase relative overflow-visible group">
+              <span class="absolute inset-0 rounded-full bg-white opacity-0 group-hover:opacity-100 group-hover:animate-[bubblePulse_1.5s_ease-out_infinite] transition-opacity duration-300"></span>
+              <span class="relative z-10 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-shadow duration-300">Join The Future</span>
+            </button>
+            <button class="flex items-center gap-2 text-white hover:text-primary transition-colors text-sm font-bold tracking-widest px-4 py-4 uppercase group">
+              <span class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">play_arrow</span>
+              </span>
+              Watch Tour
+            </button>
+          </div>
+        </div>
+        <div class="lg:col-span-5 relative" data-aos="fade-left" data-aos-delay="300">
+          <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-30"></div>
+          <div class="glass-card p-8 md:p-10 rounded-3xl relative z-10 flex flex-col gap-8">
+            <div class="flex justify-between items-start border-b border-white/10 pb-6" data-aos="fade-up" data-aos-delay="100">
+              <div>
+                <p class="text-xs text-primary font-bold tracking-widest uppercase mb-1" data-aos="fade-right" data-aos-delay="200">Current Status</p>
+                <h3 class="text-2xl text-white font-medium" data-aos="fade-right" data-aos-delay="300">Facility Live View</h3>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                </span>
+                <span class="text-xs font-mono text-gray-400">LIVE</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="space-y-2" data-aos="zoom-in" data-aos-delay="200">
+                <p class="text-xs text-gray-400 uppercase tracking-widest">Occupancy</p>
+                <div class="flex items-end gap-2">
+                  <span class="text-3xl font-light text-white opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards]">42</span>
+                  <span class="text-sm text-gray-500 mb-1 opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards]">%</span>
+                </div>
+                <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+                  <div class="bg-primary h-full w-[42%]" style="animation: growWidth 1s ease-out forwards;"></div>
+                </div>
+              </div>
+              <div class="space-y-2" data-aos="zoom-in" data-aos-delay="400">
+                <p class="text-xs text-gray-400 uppercase tracking-widest">Air Quality</p>
+                <div class="flex items-end gap-2">
+                  <span class="text-3xl font-light text-white opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards]">98</span>
+                  <span class="text-sm text-gray-500 mb-1 opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards]">AQI</span>
+                </div>
+                <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+                  <div class="bg-primary h-full w-[98%]" style="animation: growWidth 1s ease-out forwards;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5" data-aos="slide-up" data-aos-delay="500">
+              <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">sensors</span>
+              </div>
+              <div>
+                <p class="text-sm text-white font-medium">Smart Zones Active</p>
+                <p class="text-xs text-gray-400">Biometric feedback enabled on all cardio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-primary/50">
+        <span class="material-symbols-outlined text-3xl font-light">expand_more</span>
+      </div>
+    </section>
+
+    <!-- Why Choose Us (from code4) -->
+    <section id="about" class="relative py-32 bg-[#020403]">
+      <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div class="max-w-2xl">
+            <h2 class="text-xs font-bold text-primary tracking-[0.3em] uppercase mb-4" data-aos="fade-down">Why Choose Us</h2>
+            <h3 class="text-4xl md:text-5xl font-medium text-white tracking-tight" data-aos="zoom-in" data-aos-delay="100">ENGINEERED FOR <br /> <span class="text-gray-500">OPTIMAL RESULTS.</span></h3>
+          </div>
+          <p class="text-gray-400 max-w-sm text-sm leading-relaxed text-right md:text-left" data-aos="fade-left" data-aos-delay="200">
+            We combine cutting-edge sports science with premium design to create an environment where limits are redefined.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="group relative p-10 rounded-3xl bg-surface-dark/30 border border-white/5 hover:border-primary/30 transition-all duration-500 overflow-hidden" data-aos="flip-up" data-aos-delay="100">
+            <div class="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-20 transition-opacity">
+              <span class="material-symbols-outlined text-9xl text-primary rotate-12">timer</span>
+            </div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 rounded-2xl border border-primary/30 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors shadow-[0_0_15px_rgba(52,211,153,0.1)]">
+                <span class="material-symbols-outlined text-primary text-3xl font-light">timer</span>
+              </div>
+              <h4 class="text-xl font-medium text-white mb-4 tracking-wide">24/7 Tech Access</h4>
+              <p class="text-gray-400 font-light text-sm leading-relaxed">Seamless entry via our dedicated app. Track peak hours and book equipment in advance.</p>
+            </div>
+          </div>
+          <div class="group relative p-10 rounded-3xl bg-surface-dark/30 border border-white/5 hover:border-primary/30 transition-all duration-500 overflow-hidden" data-aos="flip-up" data-aos-delay="300">
+            <div class="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-20 transition-opacity">
+              <span class="material-symbols-outlined text-9xl text-primary rotate-12">analytics</span>
+            </div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 rounded-2xl border border-primary/30 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors shadow-[0_0_15px_rgba(52,211,153,0.1)]">
+                <span class="material-symbols-outlined text-primary text-3xl font-light">analytics</span>
+              </div>
+              <h4 class="text-xl font-medium text-white mb-4 tracking-wide">Data-Driven Training</h4>
+              <p class="text-gray-400 font-light text-sm leading-relaxed">Every rep recorded. Our smart equipment syncs directly with your profile to visualize progress.</p>
+            </div>
+          </div>
+          <div class="group relative p-10 rounded-3xl bg-surface-dark/30 border border-white/5 hover:border-primary/30 transition-all duration-500 overflow-hidden" data-aos="flip-up" data-aos-delay="500">
+            <div class="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-20 transition-opacity">
+              <span class="material-symbols-outlined text-9xl text-primary rotate-12">spa</span>
+            </div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 rounded-2xl border border-primary/30 flex items-center justify-center mb-8 group-hover:bg-primary/10 transition-colors shadow-[0_0_15px_rgba(52,211,153,0.1)]">
+                <span class="material-symbols-outlined text-primary text-3xl font-light">spa</span>
+              </div>
+              <h4 class="text-xl font-medium text-white mb-4 tracking-wide">Recovery Suite</h4>
+              <p class="text-gray-400 font-light text-sm leading-relaxed">Cryotherapy, infrared saunas, and percussion therapy zones to accelerate your recovery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Luxury & Tech feature (from code4) -->
+    <section class="relative py-20 bg-background-dark">
+      <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="relative rounded-[2.5rem] overflow-hidden bg-surface-dark border border-white/5" data-aos="zoom-in">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="relative h-[400px] lg:h-auto overflow-hidden group">
+              <div class="absolute inset-0 bg-primary/20 mix-blend-color z-10"></div>
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDriYvV5fo1qJChWR_yfvTkXUFzw0aGOFTJJu5V2aww6ZhKImh0Wc_rRybEJfZ7O7xWITjjWWtRcvIjqFeT4Cs15kbZ_K9_pbOYvXXTAl7S95ov_rTtwVRJVxm5IvvfQKMXdDtvU9wrus52dreGjmX5RgNeR_Nv1EXRnf4rAI-aJ2hweMIgVNRrNrQNFyWO6sdRU1EWIAb0xAnXH8PtPF_J6HKyaMhmp5pgDqxBHjq4e21dW3U5AacoRWlzzTnSvac-miorB8miqIE" alt="Modern gym interior" class="w-full h-full object-cover transition-opacity duration-1000" />
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-500 z-20"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30">
+                <div class="text-center px-8">
+                  <p class="text-white text-lg font-medium mb-3">State-of-the-Art Facility</p>
+                  <p class="text-gray-300 text-sm leading-relaxed">Designed with the modern athlete in mind, featuring premium equipment, climate control, and architectural excellence.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-12 lg:p-20 flex flex-col justify-center gap-8 bg-gradient-to-br from-surface-dark to-[#061811]">
+              <div data-aos="fade-left" data-aos-delay="200">
+                <h2 class="text-3xl md:text-4xl font-medium text-white mb-6" data-aos="fade-down" data-aos-delay="300">THE INTERSECTION OF <br /> <span class="text-primary">LUXURY & TECH</span></h2>
+                <p class="text-gray-400 font-light leading-relaxed mb-6" data-aos="fade-up" data-aos-delay="400">Iron Clad isn't just a place to sweat. It's a sanctuary designed for the modern athlete. Spacious layouts, advanced air purification, and an aesthetic that inspires focus.</p>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-4 text-sm text-gray-300" data-aos="slide-up" data-aos-delay="400"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Smart-access locker rooms</li>
+                  <li class="flex items-center gap-4 text-sm text-gray-300" data-aos="slide-up" data-aos-delay="500"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Anti-microbial surfaces</li>
+                  <li class="flex items-center gap-4 text-sm text-gray-300" data-aos="slide-up" data-aos-delay="600"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Premium towel service</li>
+                </ul>
+              </div>
+              <a href="#" class="text-primary text-sm font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2" data-aos="fade-up" data-aos-delay="700">Explore Facilities <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trainers & Pricing (from code3) -->
+    <section id="trainers" class="w-full py-24 border-y border-emerald-900/20 bg-[#080b09]">
+      <div class="w-full max-w-[1440px] px-8 lg:px-12 mx-auto">
+        <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="max-w-xl" data-aos="fade-right">
+            <h2 class="text-white text-3xl font-display font-bold uppercase tracking-widest">Technicians</h2>
+            <p class="text-gray-500 mt-4 text-sm leading-relaxed">Each trainer operates as a high-performance specialist, utilizing integrated tech to monitor and optimize your physical output.</p>
+          </div>
+          <a href="#" class="flex items-center gap-4 text-primary text-[10px] font-bold uppercase tracking-[0.3em] group border-b border-primary/20 pb-1" data-aos="fade-left">Roster Access <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">north_east</span></a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div class="group relative flex flex-col gap-6" data-aos="slide-up" data-aos-delay="100">
+            <div class="relative w-full aspect-[4/5] overflow-hidden rounded-sm glass-card emerald-glow transition-all duration-500 group-hover:border-primary/40">
+              <div class="absolute inset-0 bg-cover bg-center grayscale opacity-60 group-hover:grayscale-0 transition-all duration-700" style="background-image: url('https://images.unsplash.com/photo-1704223523571-2b3778308425?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div class="text-center px-6">
+                  <p class="text-white text-sm font-medium mb-2">Hypertrophy Expert</p>
+                  <p class="text-gray-300 text-xs leading-relaxed">Specializing in muscle-building protocols with 10+ years of experience in biomechanical optimization.</p>
+                </div>
+              </div>
+              <div class="absolute bottom-6 left-6 right-6">
+                <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                  <span class="text-[9px] uppercase tracking-widest text-primary font-bold">Active Protocol</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1 px-2">
+              <h3 class="text-white text-xl font-display font-medium uppercase tracking-wider group-hover:text-primary transition-colors">Marcus Steele</h3>
+              <p class="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em]">Hypertrophy Specialist</p>
+            </div>
+          </div>
+          <div class="group relative flex flex-col gap-6" data-aos="slide-up" data-aos-delay="300">
+            <div class="relative w-full aspect-[4/5] overflow-hidden rounded-sm glass-card emerald-glow transition-all duration-500 group-hover:border-primary/40">
+              <div class="absolute inset-0 bg-cover bg-center grayscale opacity-60 group-hover:grayscale-0 transition-all duration-700" style="background-image: url('https://images.unsplash.com/photo-1434682966726-19ad3a76e143?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div class="text-center px-6">
+                  <p class="text-white text-sm font-medium mb-2">Biometric Analyst</p>
+                  <p class="text-gray-300 text-xs leading-relaxed">Certified in advanced performance metrics and data-driven training methodologies.</p>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80"></div>
+              <div class="absolute bottom-6 left-6 right-6">
+                <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                  <span class="text-[9px] uppercase tracking-widest text-primary font-bold">Active Protocol</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1 px-2">
+              <h3 class="text-white text-xl font-display font-medium uppercase tracking-wider group-hover:text-primary transition-colors">Sarah Vance</h3>
+              <p class="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em]">Biometric Analyst</p>
+            </div>
+          </div>
+          <div class="group relative flex flex-col gap-6" data-aos="slide-up" data-aos-delay="500">
+            <div class="relative w-full aspect-[4/5] overflow-hidden rounded-sm glass-card emerald-glow transition-all duration-500 group-hover:border-primary/40">
+              <div class="absolute inset-0 bg-cover bg-center grayscale opacity-60 group-hover:grayscale-0 transition-all duration-700" style="background-image: url('https://images.unsplash.com/photo-1736264334806-b50e5ec94be1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div class="text-center px-6">
+                  <p class="text-white text-sm font-medium mb-2">Kinetic Engineer</p>
+                  <p class="text-gray-300 text-xs leading-relaxed">Master of movement science and functional biomechanics for peak athletic performance.</p>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80"></div>
+              <div class="absolute bottom-6 left-6 right-6">
+                <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                  <span class="text-[9px] uppercase tracking-widest text-primary font-bold">Active Protocol</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1 px-2">
+              <h3 class="text-white text-xl font-display font-medium uppercase tracking-wider group-hover:text-primary transition-colors">Jaxson Void</h3>
+              <p class="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em]">Kinetic Engineer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="w-full py-32 bg-background-dark relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[160px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-800/20 rounded-full blur-[120px]"></div>
+        <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, rgba(16, 185, 129, 0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
+      </div>
+      <div class="w-full max-w-[1440px] px-8 lg:px-12 mx-auto relative z-10">
+        <div class="text-center mb-24 max-w-2xl mx-auto" data-aos="fade-down">
+          <h2 class="text-white text-4xl font-display font-bold uppercase tracking-[0.2em] mb-4">Membership Tiers</h2>
+          <div class="h-1 w-12 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          <div class="glass-card p-10 flex flex-col rounded-sm transition-transform duration-500 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-10">
+              <h3 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em] mb-4">Baseline</h3>
+              <div class="flex items-baseline gap-2">
+                <span class="text-5xl font-display font-bold text-white tracking-tightest">29</span>
+                <span class="text-gray-500 font-bold text-sm tracking-widest">USD/MO</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-6 mb-12 flex-1">
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">data_usage</span>Standard Facility Access</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">data_usage</span>Digital Logbook</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">data_usage</span>Free Parking</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">data_usage</span>Mobile App Access</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">data_usage</span>Basic Locker Service</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-500/50 line-through"><span class="material-symbols-outlined text-gray-700 text-lg">lock</span>Personal Training</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-500/50 line-through"><span class="material-symbols-outlined text-gray-700 text-lg">lock</span>Neural Recovery Suite</li>
+            </ul>
+            <button class="w-full py-4 border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-white hover:bg-white hover:text-black transition-all">Initiate</button>
+          </div>
+          <div class="glass-card neon-border p-10 flex flex-col rounded-sm relative scale-105 shadow-2xl transition-transform duration-500 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-neon text-background-dark text-[9px] font-black px-6 py-1 tracking-[0.4em] uppercase">Optimized</div>
+            <div class="mb-10">
+              <h3 class="text-xs font-bold text-neon uppercase tracking-[0.3em] mb-4">Technical</h3>
+              <div class="flex items-baseline gap-2">
+                <span class="text-6xl font-display font-bold text-white tracking-tightest">59</span>
+                <span class="text-gray-500 font-bold text-sm tracking-widest">USD/MO</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-6 mb-12 flex-1">
+              <li class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-white"><span class="material-symbols-outlined text-neon text-lg">memory</span>Full Systems Access</li>
+              <li class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-white"><span class="material-symbols-outlined text-neon text-lg">memory</span>Biometric Monitoring</li>
+              <li class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-white"><span class="material-symbols-outlined text-neon text-lg">memory</span>Cryo-Recovery Unit</li>
+              <li class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-white"><span class="material-symbols-outlined text-neon text-lg">memory</span>Technical Workshops</li>
+              <li class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-white"><span class="material-symbols-outlined text-neon text-lg">memory</span>Priority Booking</li>
+              <li class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-white"><span class="material-symbols-outlined text-neon text-lg">memory</span>Smart Locker</li>
+              <li class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-white"><span class="material-symbols-outlined text-neon text-lg">memory</span>Nutrition Tracking</li>
+              <li class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-white"><span class="material-symbols-outlined text-neon text-lg">memory</span>Guest Passes (2/mo)</li>
+            </ul>
+            <button class="w-full py-4 bg-neon text-background-dark text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white transition-all">Authorize</button>
+          </div>
+          <div class="glass-card p-10 flex flex-col rounded-sm transition-transform duration-500 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+            <div class="mb-10">
+              <h3 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em] mb-4">Vanguard</h3>
+              <div class="flex items-baseline gap-2">
+                <span class="text-5xl font-display font-bold text-white tracking-tightest">99</span>
+                <span class="text-gray-500 font-bold text-sm tracking-widest">USD/MO</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-6 mb-12 flex-1">
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">leaderboard</span>Unlimited Protocols</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">leaderboard</span>Dedicated Technician</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">leaderboard</span>Custom Nutrition Logic</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">leaderboard</span>VIP Recovery Access</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">leaderboard</span>Private Training Zone</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">leaderboard</span>Monthly Body Scan</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">leaderboard</span>Unlimited Guests</li>
+              <li class="flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-gray-400"><span class="material-symbols-outlined text-primary text-lg">leaderboard</span>Premium Supplements</li>
+            </ul>
+            <button class="w-full py-4 border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-white hover:bg-white hover:text-black transition-all">Initiate</button>
+          </div>
+        </div>
+        <div class="mt-20 flex justify-center items-center gap-4">
+          <span class="h-px w-12 bg-white/10"></span>
+          <p class="text-gray-600 text-[9px] uppercase tracking-[0.3em] flex items-center gap-2"><span class="material-symbols-outlined text-xs">shield_with_heart</span>Secure Encryption & Data Privacy Guaranteed</p>
+          <span class="h-px w-12 bg-white/10"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Classes & Facilities (from code) -->
+    <section class="relative h-[70vh] w-full flex items-center justify-center overflow-visible border-b border-neon-green/5 bg-forest-deep">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 opacity-40 scale-105 transition-transform duration-[2s] hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCt2tVtrztnomBwBao9n3pJOy3y_XDdmrdCwf1lTWvjSsal6bHljGi4_BbcmO38drcg845zh_NJddjGnGoBGGoqkg3ceYQ29I9I6j__vEE_elhMZ_mGZc9dPDLTzBAgO9_ytgi66pJfO7b5V-3uoNuZSxQYz8_TIU-NRRvyYaJAJKovp-ko5BnN57pvWgaHBDD9lFdiF1ipm4AxBanYniUKflvPpQihJVOIHqbpFT-7yXoIPv8z4YZlphqgUlWUT2eHm4N1AYt0FVU');"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-forest-deep/20 via-forest-deep/90 to-forest-deep z-10"></div>
+      <div class="relative z-30 container mx-auto px-8 text-center max-w-5xl flex flex-col items-center gap-8 overflow-visible">
+        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-forest-mid/80 border border-neon-green/20 backdrop-blur-md transition-all duration-500 hover:border-neon-green/50 hover:scale-105 animate-border-glow" data-aos="fade-down" data-aos-duration="800">
+          <span class="flex size-2 rounded-full bg-neon-green shadow-[0_0_8px_#34d399] animate-pulse"></span>
+          <span class="text-[10px] font-bold text-neon-green tracking-[0.3em] uppercase font-wide">Advanced Human Optimization</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight text-white font-body uppercase px-8 pb-2 overflow-visible" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+          Refine <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-emerald-800 animate-glow">Elite</span> Performance
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl font-light leading-relaxed" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">Integration of biological precision and cutting-edge tech. Our curriculum is engineered for the 0.1%.</p>
+        <div class="flex flex-col sm:flex-row gap-6 mt-4" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+          <button class="h-14 px-10 rounded-full bg-neon-green text-forest-deep font-black text-xs uppercase tracking-widest transition-all duration-500 hover:scale-110 hover:shadow-[0_0_30px_rgba(52,211,153,0.6)] hover:-translate-y-1">Explore Modules</button>
+          <button class="h-14 px-10 rounded-full border border-neon-green/30 bg-white/5 backdrop-blur-md text-white font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-neon-green/60">Facility Tour</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 px-6 sm:px-12 relative overflow-hidden bg-forest-deep">
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-emerald-tech/5 rounded-full blur-[150px] pointer-events-none animate-float"></div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
+          <div class="max-w-2xl">
+            <div class="text-neon-green text-[10px] font-bold tracking-[0.4em] uppercase mb-4 font-wide animate-glow" data-aos="fade-down" data-aos-delay="100">Curated Training</div>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6 font-wide uppercase italic tracking-tight" data-aos="zoom-in" data-aos-delay="200">The Curriculum</h2>
+            <p class="text-gray-500 text-lg" data-aos="fade-up" data-aos-delay="300">Sophisticated training blocks designed by elite biometric specialists to target specific physiological outcomes.</p>
+          </div>
+          <div class="flex flex-wrap gap-3" data-aos="fade-left" data-aos-delay="400">
+            <button onclick="filterClasses('all')" class="filter-btn active px-6 py-2.5 rounded-full bg-neon-green text-forest-deep text-[10px] font-black uppercase tracking-widest shadow-[0_0_20px_rgba(52,211,153,0.2)] transition-all duration-500 hover:scale-110 hover:shadow-[0_0_30px_rgba(52,211,153,0.4)]">Global</button>
+            <button onclick="filterClasses('hiit')" class="filter-btn px-6 py-2.5 rounded-full border border-neon-green/10 bg-forest-mid/50 text-gray-400 text-[10px] font-bold uppercase tracking-widest hover:border-neon-green/40 hover:text-white transition-all duration-500 hover:scale-105 hover:bg-forest-mid">HIIT-X</button>
+            <button onclick="filterClasses('zen')" class="filter-btn px-6 py-2.5 rounded-full border border-neon-green/10 bg-forest-mid/50 text-gray-400 text-[10px] font-bold uppercase tracking-widest hover:border-neon-green/40 hover:text-white transition-all duration-500 hover:scale-105 hover:bg-forest-mid">Zen-Tech</button>
+            <button onclick="filterClasses('power')" class="filter-btn px-6 py-2.5 rounded-full border border-neon-green/10 bg-forest-mid/50 text-gray-400 text-[10px] font-bold uppercase tracking-widest hover:border-neon-green/40 hover:text-white transition-all duration-500 hover:scale-105 hover:bg-forest-mid">Power-Bio</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8" id="class-grid">
+          <!-- cards from code.html -->
+          <div class="class-card glass-card group relative p-2 rounded-2xl transition-all duration-700 overflow-hidden bg-[#0a2116]/40 hover:bg-[#0a2116]/60 hover-lift hover:border-neon-green/30" data-category="hiit" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="relative aspect-[10/12] rounded-xl overflow-hidden mb-6">
+              <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 px-6">
+                <p class="text-white text-sm text-center leading-relaxed transform scale-90 group-hover:scale-100 transition-transform duration-700">High-intensity interval training designed to push cardiovascular limits and maximize caloric burn in minimal time.</p>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent opacity-60"></div>
+              <div class="absolute top-4 left-4 transition-all duration-500 group-hover:scale-110"><span class="px-3 py-1 rounded-sm bg-forest-deep/80 border border-neon-green/30 text-[8px] font-black text-neon-green uppercase tracking-widest backdrop-blur-sm group-hover:border-neon-green group-hover:bg-neon-green/20 transition-all duration-500">Neuro-Response</span></div>
+            </div>
+            <div class="px-4 pb-6">
+              <div class="flex items-center gap-2 mb-3 transition-all duration-300 group-hover:gap-3"><span class="material-symbols-outlined text-neon-green text-lg font-extralight transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">bolt</span><h3 class="text-white text-xl font-black font-wide uppercase tracking-tighter glow-text group-hover:text-neon-green transition-colors duration-500">Inferno HIIT</h3></div>
+              <p class="text-gray-500 text-sm leading-relaxed mb-6 font-light group-hover:text-gray-400 transition-colors duration-500">Precision cardiovascular conditioning leveraging high-velocity intervals for metabolic optimization.</p>
+              <div class="flex items-center justify-between"><span class="text-[10px] font-bold text-neon-green tracking-widest uppercase flex items-center gap-2 transition-all duration-300 group-hover:tracking-[0.25em]"><span class="material-symbols-outlined text-sm">hourglass_empty</span>45 MIN</span><button class="text-white hover:text-neon-green transition-all duration-500 hover:scale-125 hover:rotate-90"><span class="material-symbols-outlined">add_circle</span></button></div>
+            </div>
+          </div>
+          <div class="class-card glass-card group relative p-2 rounded-2xl transition-all duration-700 overflow-hidden bg-[#0a2116]/40 hover:bg-[#0a2116]/60 hover-lift hover:border-neon-green/30" data-category="power" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+            <div class="relative aspect-[10/12] rounded-xl overflow-hidden mb-6">
+              <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1549476464-37392f717541?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 px-6">
+                <p class="text-white text-sm text-center leading-relaxed transform scale-90 group-hover:scale-100 transition-transform duration-700">Advanced resistance training protocols focused on progressive overload for optimal muscle fiber recruitment and growth.</p>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent opacity-60"></div>
+              <div class="absolute top-4 left-4 transition-all duration-500 group-hover:scale-110"><span class="px-3 py-1 rounded-sm bg-forest-deep/80 border border-neon-green/30 text-[8px] font-black text-neon-green uppercase tracking-widest backdrop-blur-sm group-hover:border-neon-green group-hover:bg-neon-green/20 transition-all duration-500">Hypertrophy</span></div>
+            </div>
+            <div class="px-4 pb-6">
+              <div class="flex items-center gap-2 mb-3 transition-all duration-300 group-hover:gap-3"><span class="material-symbols-outlined text-neon-green text-lg font-extralight transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">database</span><h3 class="text-white text-xl font-black font-wide uppercase tracking-tighter glow-text group-hover:text-neon-green transition-colors duration-500">Iron Nexus</h3></div>
+              <p class="text-gray-500 text-sm leading-relaxed mb-6 font-light group-hover:text-gray-400 transition-colors duration-500">Biomechanical resistance training protocols designed to maximize muscle fiber recruitment and density.</p>
+              <div class="flex items-center justify-between"><span class="text-[10px] font-bold text-neon-green tracking-widest uppercase flex items-center gap-2 transition-all duration-300 group-hover:tracking-[0.25em]"><span class="material-symbols-outlined text-sm">hourglass_empty</span>60 MIN</span><button class="text-white hover:text-neon-green transition-all duration-500 hover:scale-125 hover:rotate-90"><span class="material-symbols-outlined">add_circle</span></button></div>
+            </div>
+          </div>
+          <div class="class-card glass-card group relative p-2 rounded-2xl transition-all duration-700 overflow-hidden bg-[#0a2116]/40 hover:bg-[#0a2116]/60 hover-lift hover:border-neon-green/30" data-category="zen" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+            <div class="relative aspect-[10/12] rounded-xl overflow-hidden mb-6">
+              <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1751456357786-68c278e9063c?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 px-6">
+                <p class="text-white text-sm text-center leading-relaxed transform scale-90 group-hover:scale-100 transition-transform duration-700">Mindful movement sessions combining flexibility training, breath-work, and mobility exercises for recovery and balance.</p>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent opacity-60"></div>
+              <div class="absolute top-4 left-4 transition-all duration-500 group-hover:scale-110"><span class="px-3 py-1 rounded-sm bg-forest-deep/80 border border-neon-green/30 text-[8px] font-black text-neon-green uppercase tracking-widest backdrop-blur-sm group-hover:border-neon-green group-hover:bg-neon-green/20 transition-all duration-500">Bio-Kinetic</span></div>
+            </div>
+            <div class="px-4 pb-6">
+              <div class="flex items-center gap-2 mb-3 transition-all duration-300 group-hover:gap-3"><span class="material-symbols-outlined text-neon-green text-lg font-extralight transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">self_improvement</span><h3 class="text-white text-xl font-black font-wide uppercase tracking-tighter glow-text group-hover:text-neon-green transition-colors duration-500">Zen Flow</h3></div>
+              <p class="text-gray-500 text-sm leading-relaxed mb-6 font-light group-hover:text-gray-400 transition-colors duration-500">Neuromuscular restoration and dynamic flexibility sessions integrating breath-work and posture control.</p>
+              <div class="flex items-center justify-between"><span class="text-[10px] font-bold text-neon-green tracking-widest uppercase flex items-center gap-2 transition-all duration-300 group-hover:tracking-[0.25em]"><span class="material-symbols-outlined text-sm">hourglass_empty</span>60 MIN</span><button class="text-white hover:text-neon-green transition-all duration-500 hover:scale-125 hover:rotate-90"><span class="material-symbols-outlined">add_circle</span></button></div>
+            </div>
+          </div>
+          <div class="class-card glass-card group relative p-2 rounded-2xl transition-all duration-700 overflow-hidden bg-[#0a2116]/40 hover:bg-[#0a2116]/60 hover-lift hover:border-neon-green/30" data-category="hiit" data-aos="fade-up" data-aos-delay="550" data-aos-duration="800">
+            <div class="relative aspect-[10/12] rounded-xl overflow-hidden mb-6">
+              <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1581009137042-c552e485697a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 px-6">
+                <p class="text-white text-sm text-center leading-relaxed transform scale-90 group-hover:scale-100 transition-transform duration-700">Data-driven cycling sessions with real-time performance metrics and synchronized resistance adjustments for maximum efficiency.</p>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent opacity-60"></div>
+              <div class="absolute top-4 left-4 transition-all duration-500 group-hover:scale-110"><span class="px-3 py-1 rounded-sm bg-forest-deep/80 border border-neon-green/30 text-[8px] font-black text-neon-green uppercase tracking-widest backdrop-blur-sm group-hover:border-neon-green group-hover:bg-neon-green/20 transition-all duration-500">Aerobic Lab</span></div>
+            </div>
+            <div class="px-4 pb-6">
+              <div class="flex items-center gap-2 mb-3 transition-all duration-300 group-hover:gap-3"><span class="material-symbols-outlined text-neon-green text-lg font-extralight transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">cyclone</span><h3 class="text-white text-xl font-black font-wide uppercase tracking-tighter glow-text group-hover:text-neon-green transition-colors duration-500">Sprint Lab</h3></div>
+              <p class="text-gray-500 text-sm leading-relaxed mb-6 font-light group-hover:text-gray-400 transition-colors duration-500">High-cadence metabolic conditioning using synchronized data-driven output metrics.</p>
+              <div class="flex items-center justify-between"><span class="text-[10px] font-bold text-neon-green tracking-widest uppercase flex items-center gap-2 transition-all duration-300 group-hover:tracking-[0.25em]"><span class="material-symbols-outlined text-sm">hourglass_empty</span>30 MIN</span><button class="text-white hover:text-neon-green transition-all duration-500 hover:scale-125 hover:rotate-90"><span class="material-symbols-outlined">add_circle</span></button></div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-20 flex justify-center" data-aos="fade-up" data-aos-delay="700">
+          <button class="text-[10px] font-black text-neon-green uppercase tracking-[0.4em] flex items-center gap-4 group transition-all duration-500 hover:gap-6">Full Schedule Interface <span class="size-8 rounded-full border border-neon-green/30 flex items-center justify-center group-hover:bg-neon-green group-hover:text-forest-deep transition-all duration-500 group-hover:scale-110 group-hover:rotate-90"><span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 bg-forest-mid/30 relative border-y border-neon-green/5">
+      <div class="max-w-7xl mx-auto px-6 sm:px-12">
+        <div class="flex items-end justify-between mb-20" data-aos="fade-up" data-aos-duration="800">
+          <div class="max-w-xl">
+            <div class="text-neon-green text-[10px] font-bold tracking-[0.4em] uppercase mb-4 font-wide animate-glow" data-aos="fade-down" data-aos-delay="100">Infrastructure</div>
+            <h2 class="text-4xl md:text-5xl font-black text-white font-wide uppercase italic tracking-tight" data-aos="zoom-in" data-aos-delay="200">The Ecosystem</h2>
+          </div>
+          <div class="flex gap-4" data-aos="fade-left" data-aos-delay="300">
+            <button id="carousel-prev" class="size-14 rounded-full border border-neon-green/20 flex items-center justify-center text-white hover:border-neon-green transition-all duration-500 hover:scale-110 hover:bg-neon-green/10 hover:rotate-12"><span class="material-symbols-outlined font-light transition-transform duration-300 hover:-translate-x-1">chevron_left</span></button>
+            <button id="carousel-next" class="size-14 rounded-full border border-neon-green/20 flex items-center justify-center text-white hover:border-neon-green transition-all duration-500 hover:scale-110 hover:bg-neon-green/10 hover:-rotate-12"><span class="material-symbols-outlined font-light transition-transform duration-300 hover:translate-x-1">chevron_right</span></button>
+          </div>
+        </div>
+        <div id="facility-carousel" class="flex overflow-x-auto gap-12 pb-12 pt-4 px-6 hide-scrollbar snap-x snap-mandatory scroll-smooth">
+          <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] group cursor-pointer" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="relative h-[600px] rounded-[2rem] overflow-hidden glass-card border-neon-green/10 hover:border-neon-green/40 transition-all duration-700 hover:shadow-lg hover:shadow-neon-green/30">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJJ-7rXgTlhqRT_tTmqy6pSM1M7gpTvah-QSjdVulHM8aFDuQHXy-GoxbuQNvFPbCqvVruWBcb2m5poG6SmfywbR9khSxVZAVAEY0KmTQw70qhEjDlwPN9uRcXd0bYoGGsYjmZo3PAH_xW2bunuxvEKezq4Yha4D4FAwrvdhqqHN9rYo-f7AZw9UKgcaDG9zV9swdzcwmdkrwBeBfD5kWwU-ksFmGhg4JNxIliMxjZTqfDXSI2Njid2AzISGEW1uXuKs-kuU8VPAw');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/20 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-10 w-full">
+                <div class="flex items-center gap-3 mb-6 transition-all duration-500 group-hover:gap-5"><span class="material-symbols-outlined text-neon-green font-extralight text-3xl transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">monitor_heart</span><h3 class="text-3xl font-black text-white font-wide uppercase italic tracking-tighter group-hover:text-neon-green transition-colors duration-500">Biometric Cardio</h3></div>
+                <p class="text-gray-400 text-sm mb-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 leading-relaxed font-light">AI-integrated equipment that adjusts resistance in real-time based on your VO2 max and heart rate variability.</p>
+                <div class="flex items-center gap-4 text-neon-green text-[10px] font-black uppercase tracking-[0.3em] group-hover:gap-6 transition-all duration-500">Module Details <span class="material-symbols-outlined text-lg transition-transform duration-500 group-hover:translate-x-2">arrow_right_alt</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] group cursor-pointer" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+            <div class="relative h-[600px] rounded-[2rem] overflow-hidden glass-card border-neon-green/10 hover:border-neon-green/40 transition-all duration-700 hover:shadow-lg hover:shadow-neon-green/30">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDma_fEPfbabtLTZUJgZozMafXmzWwZyJfQ5WqER5sJu3KM7GRU79iUq8BrjONR5uW-PF6cDao_ha8xNzVE_1nOcSBg5DzFmmE6K3zLEygnKoomnrVsyhZnIIj5uU9ha_jkTRITOCEQY6JGDyHXo3JUtV0wBwE4mSqjoKx9O7F_Et4ZKXrosNe-P-5z_AsFzSXF2weuVXxKzZk4Z_lUPJ93BKAfXnxBQk6pTSmCOvWJzmQtNeWdNeKW_naEJA5i7z3mRkNjrmXzoRY');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/20 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-10 w-full">
+                <div class="flex items-center gap-3 mb-6 transition-all duration-500 group-hover:gap-5"><span class="material-symbols-outlined text-neon-green font-extralight text-3xl transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">fitness_center</span><h3 class="text-3xl font-black text-white font-wide uppercase italic tracking-tighter group-hover:text-neon-green transition-colors duration-500">Precision Kinematics</h3></div>
+                <p class="text-gray-400 text-sm mb-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 leading-relaxed font-light">Olympic-grade free weight zones calibrated for absolute balance and maximum torque safety.</p>
+                <div class="flex items-center gap-4 text-neon-green text-[10px] font-black uppercase tracking-[0.3em] group-hover:gap-6 transition-all duration-500">Module Details <span class="material-symbols-outlined text-lg transition-transform duration-500 group-hover:translate-x-2">arrow_right_alt</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="snap-center shrink-0 w-[85vw] sm:w-[450px] group cursor-pointer" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+            <div class="relative h-[600px] rounded-[2rem] overflow-hidden glass-card border-neon-green/10 hover:border-neon-green/40 transition-all duration-700 hover:shadow-lg hover:shadow-neon-green/30">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBeDNSgxCsXrTtiwXLgIHpgzTzA3M897zlvoFiS3_mEF4TMctcP6iZEtTNVsuy97Ar5UUfhblE9EFUzAbmTwG1dmfU8VETmvRWjdgmqGhh6VCOpeKK6jn1unH5kAtRrf8eb6LVcjs8hTOGDRUOQBuhqADIOpwf7HgohnAoSnCAHAivMEla86Ad3tXEfEwRVI5Y-1lOlpKfKgHEvGB0GDcBOrU_nshii0r0kZ-u1PwuyMd_g5t73v33rKMkXYVCS3-FAbzkY5OjLFnM');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/20 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-10 w-full">
+                <div class="flex items-center gap-3 mb-6 transition-all duration-500 group-hover:gap-5"><span class="material-symbols-outlined text-neon-green font-extralight text-3xl transition-all duration-500 group-hover:scale-125 group-hover:rotate-12">ac_unit</span><h3 class="text-3xl font-black text-white font-wide uppercase italic tracking-tighter group-hover:text-neon-green transition-colors duration-500">Recovery Nexus</h3></div>
+                <p class="text-gray-400 text-sm mb-8 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 leading-relaxed font-light">Post-workout biological reset featuring cryo-pods, infrared arrays, and compression technology.</p>
+                <div class="flex items-center gap-4 text-neon-green text-[10px] font-black uppercase tracking-[0.3em] group-hover:gap-6 transition-all duration-500">Module Details <span class="material-symbols-outlined text-lg transition-transform duration-500 group-hover:translate-x-2">arrow_right_alt</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA (from code4) -->
+    <section class="py-24 bg-background-dark relative overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/10 blur-[100px] rounded-full animate-float"></div>
+      <div class="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
+        <h2 class="text-4xl md:text-6xl font-medium text-white tracking-tight mb-8" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">FUTURE PROOF <br /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-700 animate-glow">YOUR FITNESS</span></h2>
+        <p class="text-gray-400 text-lg font-light mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">Join the most advanced fitness community today. Limited memberships available for this season.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+          <button class="bg-primary hover:bg-accent text-background-dark text-sm font-bold tracking-widest px-12 py-4 rounded-full transition-all duration-500 shadow-[0_0_20px_rgba(52,211,153,0.4)] hover:shadow-[0_0_40px_rgba(52,211,153,0.8)] uppercase transform hover:-translate-y-2 hover:scale-110 animate-pulse-glow">Apply for Membership</button>
+          <button class="bg-transparent border border-white/20 hover:border-primary text-white text-sm font-bold tracking-widest px-12 py-4 rounded-full transition-all duration-500 uppercase hover:bg-white/10 hover:scale-105 hover:border-white">Book a Visit</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials, Transformation, Journal (from code1) -->
+    <section class="py-24 px-4 md:px-8 lg:px-20 relative overflow-hidden bg-emerald-deeper">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-glow/10 rounded-full blur-[150px] -z-10 animate-float"></div>
+      <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] bg-emerald-glow/5 rounded-full blur-[120px] -z-10 animate-float" style="animation-delay: 1s;"></div>
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div class="max-w-2xl" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
+            <span class="text-primary font-tech tracking-[0.2em] uppercase text-sm mb-4 block animate-glow" data-aos="fade-down" data-aos-delay="150">Endorsements</span>
+            <h2 class="text-4xl md:text-5xl font-light tracking-tight text-white font-tech" data-aos="zoom-in" data-aos-delay="200">Proven <span class="font-bold italic text-primary">Performance</span></h2>
+          </div>
+          <p class="text-slate-400 font-tech text-lg max-w-sm" data-aos="fade-left" data-aos-delay="300">Quantifiable results from our most dedicated high-performance members.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+          <div class="glass-card p-8 group hover:bg-emerald-glow/5 transition-all duration-700 border-l-0 bg-white/5 hover-lift hover:border-primary/30" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="h-14 w-14 rounded-none bg-cover bg-center border border-white/10 p-0.5 transition-all duration-500 group-hover:scale-110 group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjaRLD5iQuDqoInO5pCwELnb8VV_w6G3H6ZwoLbZ_-mqzJuFwJimVVGCTpD-mwzKsaEBvFtvBvReyUaXqUAcQ2sh0ifnE-yCyMkI-W6BsR_aZEVgKksymnBWK7M5o7aPKLHOGeuLegGeKOJWR-wN3n_M3kD1cR-Tbm2C1V4FaXUMq6FrOdNpehG7D9Vv4pAVs5kn0JD9eqElTpHP7nbVoASEHcVOrZQgCT-w8pHNPPub2_lcchxNlh4e8iRJSzi-ej_B_zjhgxXiQ');"></div>
+              <div>
+                <h4 class="font-bold text-white font-tech tracking-wide uppercase transition-all duration-300 group-hover:text-primary">S. Jenkins</h4>
+                <span class="text-[10px] text-primary/70 font-tech tracking-widest uppercase transition-all duration-300 group-hover:tracking-[0.25em]">ID: 882-TECH</span>
+              </div>
+            </div>
+            <p class="text-slate-300 leading-relaxed font-light text-lg mb-8 italic group-hover:text-white transition-colors duration-500">"The integration of biometric tracking with elite coaching has redefined my ceiling. This isn't just a gym; it's a performance lab."</p>
+            <div class="flex gap-1 text-primary/40 group-hover:text-primary transition-all duration-500">
+              <span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span>
+            </div>
+          </div>
+          <div class="glass-card p-8 group hover:bg-emerald-glow/5 transition-all duration-700 border-x-0 md:border-x bg-white/5 hover-lift hover:border-primary/30" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="h-14 w-14 rounded-none bg-cover bg-center border border-white/10 p-0.5 transition-all duration-500 group-hover:scale-110 group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTHLkiaUvhLpUxEZ3JBP4DVY5z0rp9QS66tpqePwUbM7n6XRNiNQ9WrOhI7FuHzlpPNf6CLc_JJKu8gtOB3yq420RP8KRH_JDY4cwvcuTDib51SN79epuYCu6PDSMpFmaDB4NFdXRXQXldAhV56X_8zqEmZAieLuxwVC-gb3IBA-79ooXquUzzfY1RmHhwixkEH3hAfwMxxiVZY9_6jkMg5I1tKf2UpRu7yzgQHBWfqxsGEpuRd6CKs-RzGX_FkIesRvEyK4fqClM');"></div>
+              <div>
+                <h4 class="font-bold text-white font-tech tracking-wide uppercase transition-all duration-300 group-hover:text-primary">M. Ross</h4>
+                <span class="text-[10px] text-primary/70 font-tech tracking-widest uppercase transition-all duration-300 group-hover:tracking-[0.25em]">ID: 412-ELITE</span>
+              </div>
+            </div>
+            <p class="text-slate-300 leading-relaxed font-light text-lg mb-8 italic group-hover:text-white transition-colors duration-500">"Precision engineering applied to human movement. The facility is immaculate and the community is focused purely on growth."</p>
+            <div class="flex gap-1 text-primary/40 group-hover:text-primary transition-all duration-500">
+              <span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span>
+            </div>
+          </div>
+          <div class="glass-card p-8 group hover:bg-emerald-glow/5 transition-all duration-700 border-r-0 bg-white/5 hover-lift hover:border-primary/30" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="h-14 w-14 rounded-none bg-cover bg-center border border-white/10 p-0.5 transition-all duration-500 group-hover:scale-110 group-hover:border-primary/50 group-hover:shadow-lg group-hover:shadow-primary/30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4n0a8LIqrE0TFzNKkab5gQEqsr_oWmPGgscYADWEbrP0b4ikM6nCAnEJiMBk13tc-G93wBTgfNh0Li-m5qFU4pOWj5Ibk4Xm1PUHlii8HUXOLguM4u2oIqOLs1aGWoe-0cfPKCLmaZ9XZsHeDXggDAaMLF9T3XQHUD2ESkiPu237hh7sonSJJbZq_PqIWQ7qkRTMiOQ55CFQy2EkURWlGlEFluppw0oCR8QiHvt4ugcrwknPnTkV97GNmcd4mCJXeqUnC5kxmd7k');"></div>
+              <div>
+                <h4 class="font-bold text-white font-tech tracking-wide uppercase transition-all duration-300 group-hover:text-primary">D. Chen</h4>
+                <span class="text-[10px] text-primary/70 font-tech tracking-widest uppercase transition-all duration-300 group-hover:tracking-[0.25em]">ID: 901-TRANS</span>
+              </div>
+            </div>
+            <p class="text-slate-300 leading-relaxed font-light text-lg mb-8 italic group-hover:text-white transition-colors duration-500">"Data-driven programming took the guesswork out of my transformation. 20lbs down, and my metrics are better than they were a decade ago."</p>
+            <div class="flex gap-1 text-primary/40 group-hover:text-primary transition-all duration-500">
+              <span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star</span><span class="material-symbols-outlined text-[16px] fill-current">star_half</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 px-4 md:px-8 lg:px-20 bg-emerald-dark/30 border-y border-white/5">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
+          <h2 class="text-3xl md:text-4xl font-light tracking-tight text-white font-tech uppercase" data-aos="fade-down" data-aos-delay="150">Biological <span class="text-primary font-bold animate-glow">Optimization</span></h2>
+          <div class="h-px w-24 bg-primary mx-auto mt-4" style="animation: growWidth 1.5s ease-out forwards;"></div>
+        </div>
+        <div class="relative w-full max-w-5xl mx-auto overflow-hidden shadow-2xl ring-1 ring-white/10 group hover:ring-primary/30 transition-all duration-700" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+          <div class="grid grid-cols-2 h-[450px] md:h-[550px]">
+            <div class="relative h-full w-full overflow-hidden">
+              <div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 transition-transform duration-1000 group-hover:scale-110" style="background-image: url('https://hips.hearstapps.com/hmg-prod/images/gym-workout-66d087d56ef90.jpg?crop=0.628xw:1.00xh;0.100xw,0&resize=1200:*');"></div>
+              <div class="absolute inset-0 bg-emerald-deeper/40 group-hover:bg-emerald-deeper/20 transition-colors duration-700"></div>
+              <div class="absolute top-6 left-6 border-l border-t border-white/20 w-8 h-8 transition-all duration-500 group-hover:w-12 group-hover:h-12 group-hover:border-white/40"></div>
+              <div class="absolute bottom-6 left-6 font-tech text-xs tracking-widest text-white/50 group-hover:text-white/80 transition-all duration-500">PHASE_01 // BASELINE</div>
+            </div>
+            <div class="relative h-full w-full overflow-hidden">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" style="background-image: url('https://wallpaperbat.com/img/9770679-abs-girl-iphone-hd-4k.jpg');"></div>
+              <div class="absolute inset-0 bg-gradient-to-r from-emerald-deeper/30 to-transparent group-hover:from-emerald-deeper/10 transition-colors duration-700"></div>
+              <div class="absolute top-6 right-6 border-r border-t border-primary/40 w-8 h-8 transition-all duration-500 group-hover:w-12 group-hover:h-12 group-hover:border-primary/80 group-hover:shadow-lg group-hover:shadow-primary/30"></div>
+              <div class="absolute bottom-6 right-6 font-tech text-xs tracking-widest text-primary font-bold group-hover:tracking-[0.25em] transition-all duration-500 animate-glow">PHASE_04 // OPTIMIZED</div>
+            </div>
+          </div>
+          <div class="absolute top-0 bottom-0 left-1/2 w-[1px] bg-primary/50 z-10 -translate-x-1/2 group-hover:w-[2px] group-hover:bg-primary transition-all duration-700">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-10 w-10 border border-primary/50 bg-emerald-deeper flex items-center justify-center group-hover:scale-125 group-hover:border-primary group-hover:bg-primary/20 transition-all duration-700 group-hover:rotate-180"><span class="material-symbols-outlined text-primary text-sm group-hover:text-neon-green transition-colors duration-500">unfold_more</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 px-4 md:px-8 lg:px-20 bg-emerald-deeper">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4" data-aos="fade-up" data-aos-delay="100">
+          <div data-aos="fade-right" data-aos-delay="150" data-aos-duration="800">
+            <span class="text-primary font-tech tracking-[0.2em] uppercase text-sm mb-2 block animate-glow">Insights</span>
+            <h2 class="text-4xl font-light text-white font-tech">The <span class="font-bold text-primary">Journal</span></h2>
+          </div>
+          <a href="#" class="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-primary transition-all duration-500 group hover:gap-5" data-aos="fade-left" data-aos-delay="200">Access All Intel <span class="material-symbols-outlined text-sm transition-transform duration-500 group-hover:translate-x-2 group-hover:-translate-y-2">north_east</span></a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <article class="group cursor-pointer flex flex-col h-full glass-card rounded-none border-0 bg-transparent hover:bg-white/5 transition-all duration-700 hover-lift" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+            <div class="relative overflow-hidden aspect-[16/10] mb-6">
+              <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpm1MB-xKgkZhVAJ_PSC9Q6TLmnVMj8zqOE1QM9ItCGqye8AFCE1tUeZhtyUSdhSLWKfTmhegO2SsoN8qeAoWqN9QhyAJdHp75NppbApI2hLWM2PY_f0Jin5xZNvGHkr0rgMiSNtL9cKgpSWWmRy6jAprwu26apXpuU7QOzCZd--9-fhKQVosS6p93YttjvxxeNqP9a6QSE0S3imkJwTFZGZv1c3qGmP6kjWqTT5aQNuvNcY5_DY5E5W6wy9YnjnIkOYO9xdFXDeQ');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 bg-emerald-deeper/20 group-hover:bg-transparent transition-colors duration-700"></div>
+              <div class="absolute top-0 right-0 bg-primary/90 text-emerald-deeper text-[10px] font-bold px-3 py-1 font-tech uppercase tracking-tighter transition-all duration-500 group-hover:scale-110 group-hover:bg-neon-green">Bio-Fuel</div>
+            </div>
+            <div class="px-2 flex-1 flex flex-col">
+              <div class="text-primary font-tech text-[10px] tracking-widest uppercase mb-3 transition-all duration-300 group-hover:tracking-[0.25em]">Ref: NT-402 // 05 Min</div>
+              <h3 class="text-xl font-bold text-white mb-4 leading-tight font-tech group-hover:text-primary transition-all duration-500">Molecular Fueling: Macro-Nutrient Dynamics</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-1 font-light group-hover:text-slate-300 transition-colors duration-500">Analyzing the biochemical impact of protein-to-carbohydrate ratios on peak athletic output and cellular recovery.</p>
+              <div class="flex items-center gap-2 text-white text-[10px] font-bold tracking-widest uppercase pb-6 border-b border-white/5">Explore <span class="h-px w-8 bg-primary/50 group-hover:w-16 transition-all duration-700"></span></div>
+            </div>
+          </article>
+          <article class="group cursor-pointer flex flex-col h-full glass-card rounded-none border-0 bg-transparent hover:bg-white/5 transition-all duration-700 hover-lift" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+            <div class="relative overflow-hidden aspect-[16/10] mb-6">
+              <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110" style="background-image: url('https://genxyz.blog/wp-content/uploads/sites/1147/2024/10/athletes-hands-gripping-a-barbell-during-an-intense-lift-1024x576.jpg');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 bg-emerald-deeper/20 group-hover:bg-transparent transition-colors duration-700"></div>
+              <div class="absolute top-0 right-0 bg-primary/90 text-emerald-deeper text-[10px] font-bold px-3 py-1 font-tech uppercase tracking-tighter transition-all duration-500 group-hover:scale-110 group-hover:bg-neon-green">Kinetics</div>
+            </div>
+            <div class="px-2 flex-1 flex flex-col">
+              <div class="text-primary font-tech text-[10px] tracking-widest uppercase mb-3 transition-all duration-300 group-hover:tracking-[0.25em]">Ref: TR-109 // 08 Min</div>
+              <h3 class="text-xl font-bold text-white mb-4 leading-tight font-tech group-hover:text-primary transition-all duration-500">Hypertrophy Protocols: Time Under Tension</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-1 font-light group-hover:text-slate-300 transition-colors duration-500">Leveraging eccentric loading and mechanical tension to bypass genetic plateaus and stimulate rapid myofibrillar growth.</p>
+              <div class="flex items-center gap-2 text-white text-[10px] font-bold tracking-widest uppercase pb-6 border-b border-white/5">Explore <span class="h-px w-8 bg-primary/50 group-hover:w-16 transition-all duration-700"></span></div>
+            </div>
+          </article>
+          <article class="group cursor-pointer flex flex-col h-full glass-card rounded-none border-0 bg-transparent hover:bg-white/5 transition-all duration-700 hover-lift" data-aos="fade-up" data-aos-delay="550" data-aos-duration="800">
+            <div class="relative overflow-hidden aspect-[16/10] mb-6">
+              <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 group-hover:scale-110" style="background-image: url('https://media.licdn.com/dms/image/v2/D4E10AQHX9CXfG-ImSg/image-shrink_800/image-shrink_800/0/1720008146460?e=2147483647&v=beta&t=taR3dm07VEEFb37oEwmJfTAHPX7aGQzcqK_Kt6zT2GY');"></div>
+              <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-700"></div>
+              <div class="absolute inset-0 bg-emerald-deeper/20 group-hover:bg-transparent transition-colors duration-700"></div>
+              <div class="absolute top-0 right-0 bg-primary/90 text-emerald-deeper text-[10px] font-bold px-3 py-1 font-tech uppercase tracking-tighter transition-all duration-500 group-hover:scale-110 group-hover:bg-neon-green">Synthesis</div>
+            </div>
+            <div class="px-2 flex-1 flex flex-col">
+              <div class="text-primary font-tech text-[10px] tracking-widest uppercase mb-3 transition-all duration-300 group-hover:tracking-[0.25em]">Ref: RC-881 // 04 Min</div>
+              <h3 class="text-xl font-bold text-white mb-4 leading-tight font-tech group-hover:text-primary transition-all duration-500">Active Recovery: The Neurological Advantage</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-1 font-light group-hover:text-slate-300 transition-colors duration-500">Why CNS down-regulation and parasympathetic activation are the silent drivers of elite performance cycles.</p>
+              <div class="flex items-center gap-2 text-white text-[10px] font-bold tracking-widest uppercase pb-6 border-b border-white/5">Explore <span class="h-px w-8 bg-primary/50 group-hover:w-16 transition-all duration-700"></span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (from code1) -->
+    <footer class="bg-emerald-deeper pt-24 pb-12 mt-auto border-t border-white/5 font-tech">
+      <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+          <div class="lg:col-span-4 flex flex-col gap-10" data-aos="fade-right" data-aos-duration="800">
+            <div data-aos="zoom-in" data-aos-delay="100" data-aos-duration="600">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 border border-primary flex items-center justify-center transition-all duration-500 hover:scale-110 hover:rotate-180 hover:border-neon-green hover:bg-neon-green/10" data-aos="flip-left" data-aos-delay="200"><span class="material-symbols-outlined text-primary text-xl transition-transform">hexagon</span></div>
+                <h3 class="text-2xl font-bold text-white tracking-widest uppercase animate-glow">EMERALD<span class="text-primary/70 font-light">TECH</span></h3>
+              </div>
+              <p class="text-slate-400 leading-relaxed font-light text-sm max-w-xs" data-aos="fade-up" data-aos-delay="300">The world's most advanced facility for biological engineering and athletic performance optimization.</p>
+            </div>
+            <div class="flex flex-col gap-4" data-aos="slide-up" data-aos-delay="400" data-aos-duration="700">
+              <h4 class="text-white text-xs font-bold uppercase tracking-[0.3em]">Protocol Subscription</h4>
+              <form class="flex gap-0">
+                <input type="email" placeholder="AGENT_EMAIL@DOMAIN.COM" class="w-full glass-input text-white transition-all duration-300 focus:scale-105" />
+                <button type="button" class="bg-primary hover:bg-emerald-glow text-emerald-deeper font-bold px-6 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/50"><span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+              </form>
+              <p class="text-[10px] text-slate-500 uppercase tracking-widest">Encrypted data delivery only.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <h4 class="text-white text-xs font-bold uppercase tracking-[0.3em] mb-8" data-aos="slide-down" data-aos-delay="300">System Intelligence</h4>
+            <div class="flex flex-col border-t border-white/10">
+              <details class="group border-b border-white/10" data-aos="fade-left" data-aos-delay="350">
+                <summary class="flex justify-between items-center py-5 cursor-pointer text-xs font-medium uppercase tracking-widest text-slate-300 hover:text-primary transition-all duration-300 hover:pl-2"><span>Access Schedules</span><span class="material-symbols-outlined text-sm transition-all duration-300 group-open:rotate-180 group-open:text-primary">add</span></summary>
+                <div class="pb-6 text-slate-400 text-xs leading-relaxed font-light animate-fade-in">Member access is authenticated 24/7/365. Support staff present 0600h-2100h UTC-8.</div>
+              </details>
+              <details class="group border-b border-white/10" data-aos="fade-left" data-aos-delay="400">
+                <summary class="flex justify-between items-center py-5 cursor-pointer text-xs font-medium uppercase tracking-widest text-slate-300 hover:text-primary transition-all duration-300 hover:pl-2"><span>Biometric Integration</span><span class="material-symbols-outlined text-sm transition-all duration-300 group-open:rotate-180 group-open:text-primary">add</span></summary>
+                <div class="pb-6 text-slate-400 text-xs leading-relaxed font-light animate-fade-in">All memberships include Tier 1 biometric analysis. Personal optimization protocols are available as an add-on.</div>
+              </details>
+              <details class="group border-b border-white/10" data-aos="fade-left" data-aos-delay="450">
+                <summary class="flex justify-between items-center py-5 cursor-pointer text-xs font-medium uppercase tracking-widest text-slate-300 hover:text-primary transition-all duration-300 hover:pl-2"><span>Guest Authorization</span><span class="material-symbols-outlined text-sm transition-all duration-300 group-open:rotate-180 group-open:text-primary">add</span></summary>
+                <div class="pb-6 text-slate-400 text-xs leading-relaxed font-light animate-fade-in">Single-cycle guest passes available upon background verification at the Command Center.</div>
+              </details>
+            </div>
+          </div>
+          <div class="lg:col-span-4" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
+            <div class="glass-card p-8 border-white/5 relative overflow-hidden h-full hover-lift">
+              <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl animate-float"></div>
+              <h4 class="text-white text-xs font-bold uppercase tracking-[0.3em] mb-6" data-aos="zoom-in" data-aos-delay="400">Direct Uplink</h4>
+              <form class="flex flex-col gap-4">
+                <div class="grid grid-cols-2 gap-4">
+                  <input type="text" placeholder="Identity" class="w-full glass-input text-[10px] uppercase tracking-widest transition-all duration-300 focus:border-primary/50 focus:shadow-lg focus:shadow-primary/20" data-aos="fade-right" data-aos-delay="450" />
+                  <input type="email" placeholder="Secure Email" class="w-full glass-input text-[10px] uppercase tracking-widest transition-all duration-300 focus:border-primary/50 focus:shadow-lg focus:shadow-primary/20" data-aos="fade-left" data-aos-delay="500" />
+                </div>
+                <textarea rows="3" placeholder="Communication content..." class="w-full glass-input text-[10px] uppercase tracking-widest resize-none transition-all duration-300 focus:border-primary/50 focus:shadow-lg focus:shadow-primary/20" data-aos="fade-up" data-aos-delay="550"></textarea>
+                <button type="button" class="w-full bg-white/5 hover:bg-primary/20 text-white border border-white/10 py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-500 hover:scale-105 hover:border-primary hover:shadow-lg hover:shadow-primary/30" data-aos="zoom-in" data-aos-delay="600">Transmit Message</button>
+              </form>
+              <div class="mt-8 pt-8 border-t border-white/10 flex items-start gap-4" data-aos="slide-up" data-aos-delay="650">
+                <div class="w-12 h-12 bg-white/5 flex items-center justify-center shrink-0 transition-all duration-300 hover:bg-primary/20 hover:scale-110"><span class="material-symbols-outlined text-primary text-lg">location_on</span></div>
+                <div>
+                  <p class="text-[10px] text-slate-400 uppercase tracking-widest leading-loose">Sublevel 04, Tech District<br />Emerald Tower, CA 90210</p>
+                  <a href="#" class="text-primary text-[10px] uppercase tracking-widest font-bold mt-1 block hover:underline">Route Protocol</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div class="text-[10px] text-slate-500 uppercase tracking-[0.3em]" data-aos="fade-right" data-aos-delay="100">© 2026 EMERALD TECH SYSTEMS // ALL RIGHTS SECURED</div>
+          <div class="flex gap-10" data-aos="fade-up" data-aos-delay="200">
+            <a href="#" class="text-[10px] text-slate-500 hover:text-primary uppercase tracking-[0.2em] transition-all duration-300 hover:scale-110 hover:tracking-[0.3em]">Privacy.sys</a>
+            <a href="#" class="text-[10px] text-slate-500 hover:text-primary uppercase tracking-[0.2em] transition-all duration-300 hover:scale-110 hover:tracking-[0.3em]">Terms.cfg</a>
+            <a href="#" class="text-[10px] text-slate-500 hover:text-primary uppercase tracking-[0.2em] transition-all duration-300 hover:scale-110 hover:tracking-[0.3em]">Cookies.dat</a>
+          </div>
+          <div class="flex gap-4" data-aos="fade-left" data-aos-delay="300">
+            <a href="#" class="w-10 h-10 border border-white/10 flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-500 hover:scale-110 hover:rotate-12 group"><span class="material-symbols-outlined text-sm font-light group-hover:animate-pulse">database</span></a>
+            <a href="#" class="w-10 h-10 border border-white/10 flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-500 hover:scale-110 hover:rotate-12 group"><span class="material-symbols-outlined text-sm font-light group-hover:animate-pulse">lan</span></a>
+            <a href="#" class="w-10 h-10 border border-white/10 flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-500 hover:scale-110 hover:rotate-12 group"><span class="material-symbols-outlined text-sm font-light group-hover:animate-pulse">terminal</span></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50,
+      delay: 100
+    });
+
+    // Filter classes function
+    window.filterClasses = function(category) {
+      const cards = document.querySelectorAll('.class-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      // Update button states
+      buttons.forEach(btn => {
+        btn.classList.remove('active', 'bg-neon-green', 'text-forest-deep', 'shadow-[0_0_20px_rgba(52,211,153,0.2)]');
+        btn.classList.add('border', 'border-neon-green/10', 'bg-forest-mid/50', 'text-gray-400');
+      });
+      
+      // Find and activate the clicked button
+      event.target.classList.add('active', 'bg-neon-green', 'text-forest-deep', 'shadow-[0_0_20px_rgba(52,211,153,0.2)]');
+      event.target.classList.remove('border', 'border-neon-green/10', 'bg-forest-mid/50', 'text-gray-400');
+      
+      // First hide all cards smoothly
+      cards.forEach(card => {
+        card.style.transition = 'opacity 200ms ease-out, transform 200ms ease-out';
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.95)';
+      });
+      
+      // Then show/hide cards after fade out completes
+      setTimeout(() => {
+        cards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+            // Force reflow
+            card.offsetHeight;
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 10);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }, 200);
+    };
+
+    // Mobile menu functionality
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a, button');
+    let menuOpen = false;
+
+    mobileMenuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      
+      if (menuOpen) {
+        // Open menu
+        mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+        mobileMenu.classList.add('opacity-100');
+        mobileMenuToggle.querySelector('span').textContent = 'close';
+        
+        // Animate menu items in
+        mobileMenuLinks.forEach((link, index) => {
+          setTimeout(() => {
+            link.classList.remove('translate-y-4', 'opacity-0');
+            link.classList.add('translate-y-0', 'opacity-100');
+          }, index * 50);
+        });
+      } else {
+        // Close menu
+        mobileMenuLinks.forEach(link => {
+          link.classList.add('translate-y-4', 'opacity-0');
+          link.classList.remove('translate-y-0', 'opacity-100');
+        });
+        
+        setTimeout(() => {
+          mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+          mobileMenu.classList.remove('opacity-100');
+          mobileMenuToggle.querySelector('span').textContent = 'menu';
+        }, 300);
+      }
+    });
+
+    // Close mobile menu when clicking a link
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (menuOpen) {
+          mobileMenuToggle.click();
+        }
+      });
+    });
+
+    // Custom scroll-based animations
+    document.addEventListener('DOMContentLoaded', function() {
+      // Carousel functionality
+      const carousel = document.getElementById('facility-carousel');
+      const prevBtn = document.getElementById('carousel-prev');
+      const nextBtn = document.getElementById('carousel-next');
+      
+      if (carousel && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          carousel.scrollBy({
+            left: -500,
+            behavior: 'smooth'
+          });
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          carousel.scrollBy({
+            left: 500,
+            behavior: 'smooth'
+          });
+        });
+      }
+      // Smooth parallax effect for hero image
+      window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('[data-parallax]');
+        
+        parallaxElements.forEach(element => {
+          const speed = element.dataset.parallax || 0.5;
+          element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+
+      // Progress bar animation on scroll
+      const progressBars = document.querySelectorAll('[style*="growWidth"]');
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+      };
+
+      const progressObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'growWidth 1.5s ease-out forwards';
+          }
+        });
+      }, observerOptions);
+
+      progressBars.forEach(bar => progressObserver.observe(bar));
+
+      // Stagger animation for cards
+      const cardGroups = document.querySelectorAll('.grid');
+      cardGroups.forEach(group => {
+        const cards = group.querySelectorAll('[data-aos]');
+        cards.forEach((card, index) => {
+          card.style.setProperty('--stagger-delay', `${index * 150}ms`);
+        });
+      });
+
+      // Add hover tilt effect to cards
+      const tiltCards = document.querySelectorAll('.hover-lift');
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = (y - centerY) / 20;
+          const rotateY = (centerX - x) / 20;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        });
+      });
+
+      // Animate numbers on scroll
+      const animateNumber = (element, target, duration = 2000, startValue = 0) => {
+        const start = startValue;
+        const increment = (target - start) / (duration / 16);
+        let current = start;
+        
+        element.textContent = Math.round(start);
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            element.textContent = Math.round(target);
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.round(current);
+          }
+        }, 16);
+      };
+
+      const numberElements = document.querySelectorAll('[data-animate-number]');
+      const heroNumbers = [];
+      
+      // Animate hero section numbers immediately on page load
+      setTimeout(() => {
+        numberElements.forEach(el => {
+          const target = parseInt(el.dataset.animateNumber);
+          const duration = parseInt(el.dataset.duration) || 2000;
+          const startValue = parseInt(el.dataset.startNumber) || 0;
+          animateNumber(el, target, duration, startValue);
+          el.dataset.animated = 'true';
+          // Track hero numbers to exclude from observer
+          if (startValue > 0) {
+            heroNumbers.push(el);
+          }
+        });
+      }, 500);
+
+      // Observer for other number animations (exclude hero numbers)
+      const numberObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.dataset.animated && !heroNumbers.includes(entry.target)) {
+            const target = parseInt(entry.target.dataset.animateNumber);
+            const duration = parseInt(entry.target.dataset.duration) || 2000;
+            const startValue = parseInt(entry.target.dataset.startNumber) || 0;
+            animateNumber(entry.target, target, duration, startValue);
+            entry.target.dataset.animated = 'true';
+          }
+        });
+      }, { threshold: 0.5 });
+
+      numberElements.forEach(el => numberObserver.observe(el));
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Add scroll reveal for elements
+      const revealElements = document.querySelectorAll('[data-reveal]');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    });
+  </script>
+</body>
+</html>
